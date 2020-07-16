@@ -1,0 +1,17 @@
+Simple lamp example:
+middlewareinventory.com/blog/ansible-playbook-example/
+--------------------------------------------------------------------------
+AWS Automation: (Provision AWS EC2)
+https://medium.com/datadriveninvestor/devops-using-ansible-to-provision-aws-ec2-instances-3d70a1cb155f
+
+user: ansible
+Accees Key : AKIAZXWPU5FEXR5MKEB5
+Secret access key : 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 
+
+Launching apache on ec2-instace
+
+https://www.linuxschoolonline.com/use-ansible-to-build-and-manage-aws-ec2-instances/
+
+
+
+

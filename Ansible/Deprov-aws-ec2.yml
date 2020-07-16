@@ -1,0 +1,39 @@
+---
+- hosts: localhost
+  gather_facts: false
+  connection: local
+  
+ vars:
+    key_name: id_rsa
+    region: ap-south-1
+    instance_ids:
+     - 'i-0709d36485be91c5e' # Replace these with your EC2 instance id’s
+    image: ami-01b8d0884f38e37b4
+    id: "ak-app"
+    sec_group: "{{ id }}-sec"
+    
+ tasks:
+ - name: Terminate EC2 instance
+   ec2:
+    aws_access_key: "{{ec2_access_key}}"
+    aws_secret_key: "{{ec2_secret_key}}"
+    instance_ids: '{{instance_ids}}'
+    region: '{{region}}'
+    state: absent
+    wait: true
+
+- name: Remove EC2 Key
+  ec2_key:
+   aws_access_key: <access key>
+   aws_secret_key: <Secret key>
+   name: '{{key_name}}'
+   state: absent
+   region: '{{region}}'
+
+- name: Remove Security Group
+  ec2_group:
+   aws_access_key: "{{ec2_access_key}}"
+   aws_secret_key: "{{ec2_secret_key}}"
+   name: '{{sec_group}}'
+   state: absent
+   region: '{{region}}
