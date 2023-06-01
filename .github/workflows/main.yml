@@ -12,3 +12,7 @@ jobs:
         shell: pwsh
         run: |
           ./hello.ps1
+      - name: Sample command run
+        shell: pwsh
+        run: |
+          echo "########## Testing ##########"        
